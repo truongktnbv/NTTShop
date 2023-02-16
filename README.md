@@ -1,1 +1,0 @@
-# NTTShop
