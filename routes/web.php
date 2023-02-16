@@ -1,0 +1,9 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\Admin\Users\Logincontroller;
+use \App\Http\Controllers\Admin\MainController;
+Route::get('/admin/users/login',[Logincontroller::class, 'index']);
+Route::post('/admin/users/login/store',[Logincontroller::class, 'store']);
+
+Route::get('/admin/main',[MainController::class,'index'])-> name('admin');
