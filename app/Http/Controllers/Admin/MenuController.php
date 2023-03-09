@@ -71,4 +71,14 @@ class MenuController extends Controller
             'error' => true
         ]);
     }
+    public function search(Request $request)
+    {
+        $search= $request->input('search-menu');
+        $menus = $this->menuService->search($search);
+        return view('admin.menu.search',[
+            'title' => 'timkiem',
+            'menus' => $menus
+        ]);
+
+    }
 }

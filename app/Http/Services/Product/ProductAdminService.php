@@ -84,4 +84,12 @@ class ProductAdminService
 
         return false;
     }
+    public function search($search)
+    {
+        return Product::where('name','like','%'.$search. '%')
+            ->where('active', 1)
+            ->orderByDesc('id')
+            ->limit(12)
+            ->get();
+    }
 }

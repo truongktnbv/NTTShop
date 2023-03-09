@@ -3,7 +3,7 @@
 @section('content')
     <div class="form-inline">
         <div class="input-group" >
-            <form action="/admin/search" method="post">
+            <form action="" method="post">
                 <input class="form-control form-control-sidebar" name="search-customer" type="search" placeholder="Search" >
                 <div class="input-group-append">
                     <button class="btn btn-sidebar">
@@ -47,9 +47,7 @@
         </tbody>
     </table>
 
-    <div class="card-footer clearfix">
-        {!! $customers->links() !!}
-    </div>
 @endsection
+
 
 

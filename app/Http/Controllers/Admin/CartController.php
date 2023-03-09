@@ -33,4 +33,14 @@ class CartController extends Controller
             'carts' => $carts
         ]);
     }
+    public function search(Request $request)
+    {
+        $search= $request->input('search-customer');
+        $customers = $this->cart->search($search);
+        return view('admin.carts.search',[
+            'title' => 'timkiem',
+            'customers' => $customers
+        ]);
+
+    }
 }

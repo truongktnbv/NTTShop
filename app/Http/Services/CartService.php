@@ -88,7 +88,6 @@ class CartService
                 'phone' => $request->input('phone'),
                 'address' => $request->input('address'),
                 'email' => $request->input('email'),
-                'content' => $request->input('content')
             ]);
 
             $this->infoProductCart($carts, $customer->id);
@@ -140,5 +139,12 @@ class CartService
         return $customer->carts()->with(['product' => function ($query) {
             $query->select('id', 'name', 'image');
         }])->get();
+    }
+    public function search($search)
+    {
+        return Customer::where('name','like','%'.$search. '%')
+            ->orderByDesc('id')
+            ->limit(12)
+            ->get();
     }
 }

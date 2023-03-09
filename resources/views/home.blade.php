@@ -156,8 +156,8 @@
 
             <div class="box">
                 <img src="/template/images/person/pic1.png" alt="">
-                <h3>john deo</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, quos eum. Laborum aut a consequatur ducimus, molestias possimus quisquam rerum temporibus ipsum voluptate accusamus, unde ab asperiores? Exercitationem, unde rem.</p>
+                <h3>maria</h3>
+                <p>Sản phẩm chất lượng tốt, đẹp, giao hàng nhanh.Tuy nhiên chất lượng không như ý</p>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -170,7 +170,7 @@
             <div class="box">
                 <img src="/template/images/person/pic2.png" alt="">
                 <h3>john deo</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, quos eum. Laborum aut a consequatur ducimus, molestias possimus quisquam rerum temporibus ipsum voluptate accusamus, unde ab asperiores? Exercitationem, unde rem.</p>
+                <p>Sản phẩm đúng như ý muốn, đẹp, chất lượng tốt</p>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -182,8 +182,8 @@
 
             <div class="box">
                 <img src="/template/images/person/pic3.png" alt="">
-                <h3>john deo</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, quos eum. Laborum aut a consequatur ducimus, molestias possimus quisquam rerum temporibus ipsum voluptate accusamus, unde ab asperiores? Exercitationem, unde rem.</p>
+                <h3>harry potter</h3>
+                <p>Sản phẩm đi vừa chân,đẹp,giao hàng nhanh.</p>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>

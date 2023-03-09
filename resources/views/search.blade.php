@@ -1,11 +1,21 @@
-@extends('main')
 
+@extends('main')
 @section('content')
+    <!-- Product -->
     <div class="bg0 m-t-23 p-b-140 p-t-80">
+
         <div class="container">
             <div class="flex-w flex-sb-m p-b-52">
                 <div class="flex-w flex-l-m filter-tope-group m-tb-10">
-                   <h1>{{ $title }}</h1>
+
+                    <div class="menu-desktop ">
+                        <ul class="main-menu" >
+                            <li class="active-menu" >
+                                <a href="/shop" style="font-size: 25px">loại giày</a>
+                            </li>
+                            {!! \App\Helpers\Helper::menus($menus) !!}
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="flex-w flex-c-m m-tb-10">
@@ -25,12 +35,12 @@
                 <!-- Search product -->
                 <div class="dis-none panel-search w-full p-t-10 p-b-15">
                     <div class="bor8 dis-flex p-l-15">
-                        <form action="" method="POST">
-                        <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-                            <i class="zmdi zmdi-search"></i>
-                        </button>
+                        <form action="/search" method="post">
 
-                        <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="Search">
+                            <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search" placeholder="Search">
+                            <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
+                                <i class="zmdi zmdi-search"></i>
+                            </button>
                             @csrf
                         </form>
                     </div>
@@ -96,9 +106,19 @@
                 </div>
             </div>
 
-            @include('products.list')
+                @include('products.list')
 
-            {!! $products->links() !!}
+
+            <!-- Load more -->
+            <div class="flex-c-m flex-w w-full p-t-45" id="button-loadMore">
+                <input type="hidden" value="1" id="page">
+                <a onclick="loadMore()" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+                    Load More
+                </a>
+            </div>
         </div>
     </div>
 @endsection
+
+
+

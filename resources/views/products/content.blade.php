@@ -74,6 +74,9 @@
                         <p class="stext-102 cl3 p-t-23">
                             {{ $product->description }}
                         </p>
+                        <p class="stext-102 cl3 p-t-23">
+                            Số lượng còn: {{ $product->quantity }}
+                        </p>
                         <div class="p-t-33">
                             <div class="flex-w flex-r-m p-b-10">
                                 <div class="size-203 flex-c-m respon6">

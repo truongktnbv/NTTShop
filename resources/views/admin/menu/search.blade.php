@@ -3,13 +3,13 @@
 @section('content')
     <div class="form-inline">
         <div class="input-group" >
-            <form action="/admin/menus/search" method="post">
-            <input class="form-control form-control-sidebar" name="search-menu" type="search" placeholder="Search" >
-            <div class="input-group-append">
-                <button class="btn btn-sidebar">
-                    <i class="fas fa-search fa-fw"></i>
-                </button>
-            </div>
+            <form action="" method="post">
+                <input class="form-control form-control-sidebar" name="search-menu" type="search" placeholder="Search" >
+                <div class="input-group-append">
+                    <button class="btn btn-sidebar">
+                        <i class="fas fa-search fa-fw"></i>
+                    </button>
+                </div>
                 @csrf
             </form>
         </div>
@@ -30,3 +30,4 @@
         </tbody>
     </table>
 @endsection
+

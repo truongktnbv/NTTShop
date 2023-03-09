@@ -98,5 +98,14 @@ class MenuService
             ->paginate(12)
             ->withQueryString();
     }
+    public function search($search)
+    {
+        return Menu::select('id', 'name', 'image')
+            ->where('name','like','%'.$search. '%')
+            ->where('active', 1)
+            ->orderByDesc('id')
+            ->limit(8)
+            ->get();
+    }
 
 }

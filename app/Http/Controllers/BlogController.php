@@ -18,7 +18,16 @@ class BlogController extends Controller
     {
         return view('blogs.blog',[
             'title'=>'NTTShop',
-            'blogs'=> $this->blog->show(),
+            'blogs'=> $this->blog->getParent(),
+            'products' => $this->product->get()
+        ]);
+    }
+    public function blog(Request $request, $id)
+    {
+        $blog = $this->blog->getId($id);
+        return view('blogs.blogcontent',[
+            'title'=>'blog',
+            'blog'=>$blog,
             'products' => $this->product->get()
         ]);
     }

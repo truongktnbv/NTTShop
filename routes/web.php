@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{menu}', [MenuController::class, 'show']);
             Route::post('edit/{menu}', [MenuController::class, 'update']);
             Route::DELETE('destroy', [MenuController::class, 'destroy']);
+            Route::post('/search',[MenuController::class,'search']);
         });
 
         #Product
@@ -36,6 +37,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{product}', [ProductController::class, 'show']);
             Route::post('edit/{product}', [ProductController::class, 'update']);
             Route::DELETE('destroy', [ProductController::class, 'destroy']);
+            Route::post('/search',[ProductController::class,'search']);
         });
 
         #Slider
@@ -61,16 +63,24 @@ Route::middleware(['auth'])->group(function () {
 
         #Cart
         Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
+        Route::post('/search', [\App\Http\Controllers\Admin\CartController::class, 'search']);
         Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
     });
 });
 Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
 Route::get('/shop',[\App\Http\Controllers\ShopController::class,'index']);
+Route::post('/search',[\App\Http\Controllers\ShopController::class,'search']);
 Route::get('/contact',[\App\Http\Controllers\ContactController::class,'index']);
 Route::get('/blog',[\App\Http\Controllers\BlogController::class,'index']);
+Route::get('/profile',[\App\Http\Controllers\profileController::class,'index']);
+Route::post('/profile',[\App\Http\Controllers\profileController::class,'update']);
+Route::get('/login',[\App\Http\Controllers\LoginController::class,'index']);
+Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login']);
+Route::get('/sign',[\App\Http\Controllers\LoginController::class,'signup']);
+Route::post('/sign', [\App\Http\Controllers\LoginController::class, 'store']);
 Route::post('/services/load-product', [App\Http\Controllers\MainController::class, 'loadProduct']);
 Route::post('/services/load-product1', [App\Http\Controllers\ShopController::class, 'loadProduct']);
-
+Route::get('blog/{id}-{slug}.html', [\App\Http\Controllers\BlogController::class, 'blog']);
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);
 Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductController::class, 'index']);
 

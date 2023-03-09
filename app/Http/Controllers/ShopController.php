@@ -38,4 +38,15 @@ class ShopController extends Controller
 
         return response()->json(['html' => '']);
     }
+    public function search(Request $request)
+    {
+        $search= $request->input('search');
+        $products = $this->product->search($search);
+        return view('search',[
+            'title' => 'NTTShop',
+            'menus' => $this->menu->show(),
+            'products'=> $products
+        ]);
+
+    }
 }

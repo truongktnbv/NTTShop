@@ -25,7 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'thumb' => 'required'
+            'image' => 'required'
         ];
     }
 
@@ -33,7 +33,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'name.required' => 'Vui lòng nhập tên sản phẩm',
-            'thumb.required' => 'Ảnh đại diện không được trống'
+            'image.required' => 'Ảnh đại diện không được trống'
         ];
     }
 }

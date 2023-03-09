@@ -74,4 +74,14 @@ class ProductController extends Controller
 
         return response()->json([ 'error' => true ]);
     }
+    public function search(Request $request)
+    {
+        $search= $request->input('search-product');
+        $products = $this->productService->search($search);
+        return view('admin.product.search',[
+            'title' => 'timkiem',
+            'products' => $products
+        ]);
+
+    }
 }

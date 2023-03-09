@@ -13,7 +13,7 @@ class ProductService
     public function get($page = null)
     {
         return Product::select('id', 'name', 'price', 'price_sale', 'image')
-            ->where('menu_id',2)
+            ->where('menu_id',7)
             ->orderByDesc('id')
             ->when($page != null, function ($query) use ($page) {
                 $query->offset($page * self::LIMIT);
@@ -45,6 +45,15 @@ class ProductService
         return Product::select('id', 'name', 'price', 'price_sale', 'image')
             ->where('active', 1)
             ->where('id', '!=', $id)
+            ->orderByDesc('id')
+            ->limit(8)
+            ->get();
+    }
+    public function search($search)
+    {
+        return Product::select('id', 'name', 'price', 'price_sale', 'image')
+            ->where('name','like','%'.$search. '%')
+            ->where('active', 1)
             ->orderByDesc('id')
             ->limit(8)
             ->get();

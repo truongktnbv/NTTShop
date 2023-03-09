@@ -3,7 +3,7 @@
 @section('content')
     <div class="form-inline">
         <div class="input-group" >
-            <form action="/admin/products/search"  method="post">
+            <form action="/admin/products/search" method="post">
                 <input class="form-control form-control-sidebar" name="search-product" type="search" placeholder="Search">
                 <div class="input-group-append">
                     <button class="btn btn-sidebar">
@@ -29,7 +29,7 @@
         </tr>
         </thead>
         <tbody>
-            @foreach($products as $key => $product)
+        @foreach($products as $key => $product)
             <tr>
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->name }}</td>
@@ -49,13 +49,9 @@
                     </a>
                 </td>
             </tr>
-            @endforeach
+        @endforeach
         </tbody>
     </table>
 
-    <div class="card-footer clearfix">
-        {!! $products->links() !!}
-    </div>
+
 @endsection
-
-
